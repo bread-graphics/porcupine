@@ -1,0 +1,25 @@
+[package]
+name = "porcupine"
+version = "0.2.4"
+authors = ["not_a_seagull <jtnunley01@gmail.com>"]
+edition = "2018"
+license = "MIT/Apache-2.0"
+repository = "https://github.com/not-a-seagull/porcupine"
+description = "Rust-y wrapper around some parts of the Win32 API"
+
+[dependencies]
+bitflags = "1.2"
+cty = "0.2.1"
+euclid = "0.20"
+lazy_static = { version = "1", features = ["spin_no_std"] } # todo: figure out a way around this
+maybe-uninit = "2"
+parking_lot = { version = "0.10", optional = true }
+spin = "0.5"
+
+[dependencies.winapi]
+version = "0.3" 
+features = ["basetsd", "commctrl", "errhandlingapi", "minwindef", "winbase", "windef", "wingdi", "winuser", "wingdi"]
+
+[features]
+default = ["std"]
+std = ["parking_lot", "winapi/std"]
