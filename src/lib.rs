@@ -2,6 +2,7 @@
 
 #![cfg(windows)]
 #![cfg_attr(not(feature = "std"), no_std)]
+#![deprecated = "Use the `winsafe` crate instead"]
 #![forbid(future_incompatible, rust_2018_idioms)]
 #![allow(clippy::uninlined_format_args, clippy::too_many_arguments)]
 
